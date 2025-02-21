@@ -1,13 +1,13 @@
-// Array para armazenar os nomes dos amigos
+// Array para armazenar os nomes 
 let amigos = [];
 
 // Função para adicionar um amigo à lista
 function adicionarAmigo() {
   // Captura o valor do campo de texto
-  const inputAmigo = document.getElementById("amigo");
-  const nome = inputAmigo.value.trim();
+  let inputAmigo = document.getElementById("amigo");
+  let nome = inputAmigo.value.trim();
 
-  // Valida a entrada: não permite valores vazios
+  // Validar a entrada: não permite valores vazios
   if (nome === "") {
     alert("Por favor, insira um nome.");
     return; 
@@ -16,7 +16,7 @@ function adicionarAmigo() {
   // Adiciona o nome ao array de amigos
   amigos.push(nome);
 
-  // Atualiza a lista de amigos na interface
+  // Atualiza a lista de amigos 
   atualizarLista();
 
   // Limpa o campo de entrada
@@ -25,14 +25,14 @@ function adicionarAmigo() {
 
 // Função para atualizar a lista de amigos na tela
 function atualizarLista() {
-  const listaAmigos = document.getElementById("listaAmigos");
+  let listaAmigos = document.getElementById("listaAmigos");
   listaAmigos.innerHTML = ""; // Limpa a lista antes de renderizar
 
   // Itera sobre o array de amigos para criar a lista
   amigos.forEach((amigo, index) => {
     const li = document.createElement("li");
     li.textContent = `${index + 1}. ${amigo}`;
-    li.className = "list-item"; // Classe para estilização, caso necessário
+    li.className = "list-item"; 
     listaAmigos.appendChild(li);
   });
 }
@@ -46,13 +46,15 @@ function sortearAmigo() {
   }
 
   // Gera um índice aleatório para o array de amigos
-  const indiceAleatorio = Math.floor(Math.random() * amigos.length);
-  const amigoSorteado = amigos[indiceAleatorio];
+  let indiceAleatorio = Math.floor(Math.random() * amigos.length);
+  let amigoSorteado = amigos[indiceAleatorio];
 
   // Exibe o nome sorteado na tela
-  const resultado = document.getElementById("resultado");
+  let resultado = document.getElementById("resultado");
   resultado.innerHTML = `<li class="result-item">O amigo secreto sorteado é: <strong>${amigoSorteado}</strong>!</li>`;
 }
+
+//Colocar o botão reiniciar para funcionar
 function reiniciarBotao() {
     amigos = [];
     document.getElementById("resultado").innerHTML = "";
