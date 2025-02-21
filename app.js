@@ -53,3 +53,8 @@ function sortearAmigo() {
   const resultado = document.getElementById("resultado");
   resultado.innerHTML = `<li class="result-item">O amigo secreto sorteado é: <strong>${amigoSorteado}</strong>!</li>`;
 }
+function reiniciarBotao() {
+    amigos = [];
+    document.getElementById("resultado").innerHTML = "";
+    atualizarLista();
+}
