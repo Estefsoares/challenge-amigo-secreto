@@ -156,6 +156,7 @@ ul {
     color: var(--color-white);
     background-color: #D84040;
     font-size: 16px;
+    margin-top: 28px;
 }
 
 .button-draw img {
